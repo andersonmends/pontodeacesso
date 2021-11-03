@@ -1,0 +1,125 @@
+﻿*{
+
+margin: 0;
+padding: 0;
+
+}
+
+#link{
+
+    margin-left: 56%;
+}
+
+body, html{
+
+		height: 100%;
+		overflow: hidden;
+}
+
+#bg{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:0;
+}
+
+#content {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	overflow: auto;
+}
+
+#calendario{
+    margin-left: 20%;
+    margin-top: 10%;
+}
+
+#dias{
+    font-size: 10pt;
+    color:white;
+    background: rgb(0, 103, 104);
+    border-color:rgb(0, 103, 104);
+ }
+
+#mes{
+    color:white;
+    font-size: 16pt;
+    text-align: center;
+    background: rgb(52, 204, 207);
+    border-color:rgb(52, 204, 207);
+}
+
+#td1{
+    width: 25px;
+    height: 20px;
+    border-color:white;
+    font-size: 10pt;
+    text-align: center;
+}
+
+#td1feriado{
+    width: 25px;
+    height: 20px;
+    color:red;
+    border-color:white;
+    font-size: 10pt;
+    text-align: center;
+}
+
+table{
+
+    border:outset;
+}
+
+#table1{
+
+
+
+}
+
+#table2{
+
+    margin-left: 20%;
+    margin-top: -15%;
+
+}
+
+#table3{
+
+    margin-left: 40%;
+    margin-top: -15%;
+
+}
+
+#table4{
+
+    margin-top: 2%;
+   
+
+}
+
+#table5{
+
+    margin-left: 20%;
+    margin-top: -15%;
+
+}
+
+#table6{
+
+    margin-left: 40%;
+    margin-top: -15%;
+
+}
+
+
+
+
+
+

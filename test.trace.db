@@ -1,0 +1,1748 @@
+05-12 14:07:47 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT FROM *[*] ALUNO "; expected "identifier"; SQL statement:
+select from * aluno [42001-166]
+05-12 14:08:04 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT FROM *[*] ALUNO "; expected "identifier"; SQL statement:
+select from * ALUNO [42001-166]
+05-12 14:13:49 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "MURHAIL@HOTMAIL.COM"; SQL statement:
+INSERT INTO PESSOA VALUES( 4545,072244894,20071989, 'MURHAIL@HOTMAIL.COM','MURHAIL',45164,'Lucas Lopes',8548,'SSP-PE',7990357,'desert','m',99703237,37645481,'aluno','seila') -- (4545, 72244894, 20071989, 'MURHAIL@HOTMAIL.COM', 'MURHAIL', 45164, 'Lucas Lopes', 8548, 'SSP-PE', 7990357, 'desert', 'm', 99703237, 37645481, 'aluno', 'seila') [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: MURHAIL@HOTMAIL.COM
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:270)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+05-12 15:36:20 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT NOME FROM TESTES WHERW NOME[*] LIKE%LUCAS "; SQL statement:
+SELECT nome FROM TESTES wherw nome like%lucas [42000-166]
+05-12 15:36:26 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT NOME FROM TESTES WHERW NOME[*] LIKE% 'lucas' "; SQL statement:
+SELECT nome FROM TESTES wherw nome like% 'lucas' [42000-166]
+05-12 15:36:32 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT NOME FROM TESTES WHERW NOME[*]=LUCAS "; SQL statement:
+SELECT nome FROM TESTES wherw nome=lucas [42000-166]
+05-12 15:36:37 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "LUCAS" not found; SQL statement:
+SELECT nome FROM TESTES where nome=lucas [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Comparison.optimize(Comparison.java:161)
+	at org.h2.command.dml.Select.prepare(Select.java:802)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-12 15:36:59 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT NOME FROM TESTES WHERE NOME LIKE%[*] 'lucas' "; expected "SELECT, FROM"; SQL statement:
+SELECT nome FROM TESTES where nome like% 'lucas' [42001-166]
+05-14 22:24:28 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Unknown data type: ")"; SQL statement:
+alter table testes add column(dtNasc) [50004-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3654)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3517)
+	at org.h2.command.Parser.parseAlterTableAddColumn(Parser.java:4960)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:4814)
+	at org.h2.command.Parser.parseAlter(Parser.java:4315)
+	at org.h2.command.Parser.parsePrepared(Parser.java:306)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-14 22:24:33 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TESTES "; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table testes [42001-166]
+05-14 22:25:03 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Unknown data type: ; SQL statement:
+alter table testes add COLUMN dtnasc [50004-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3654)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3517)
+	at org.h2.command.Parser.parseAlterTableAddColumn(Parser.java:4969)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:4814)
+	at org.h2.command.Parser.parseAlter(Parser.java:4315)
+	at org.h2.command.Parser.parsePrepared(Parser.java:306)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-14 22:27:18 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "1962"; SQL statement:
+INSERT INTO TESTES VALUES('Maria das Neves',0245678,'f',072244896,1989-07-20) -- ('Maria das Neves', 245678, 'f', 72244896, 1962) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: 1962
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:270)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+05-14 22:27:52 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "1962"; SQL statement:
+INSERT INTO TESTES VALUES('Maria das Neves',0245678,'f',072244896,1989-07-20) -- ('Maria das Neves', 245678, 'f', 72244896, 1962) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: 1962
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:270)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+05-14 22:28:06 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "-1987"; SQL statement:
+INSERT INTO TESTES VALUES('Maria das Neves',0245678,'f',072244896,20-07-2000) -- ('Maria das Neves', 245678, 'f', 72244896, -1987) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: -1987
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:270)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+05-14 22:28:59 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "20-07-2000"; SQL statement:
+INSERT INTO TESTES VALUES('Maria das Neves',0245678,'f',072244896,'20-07-2000') -- ('Maria das Neves', 245678, 'f', 72244896, '20-07-2000') [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: 20-7-2000
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+05-14 22:34:04 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "1989-20-07"; SQL statement:
+insert into pessoa values(001,559293061,61,'2012-05-13','1989-20-07','murhail@hotmail.com',8737610991,8799703237,'murhail','Lucas Lopes','Aluno',07224489450,7990357,'ssppe','desert','m') -- (1, 559293061, 61, '2012-05-13', '1989-20-07', 'murhail@hotmail.com', 8737610991, 8799703237, 'murhail', 'Lucas Lopes', 'Aluno', 7224489450, 7990357, 'ssppe', 'desert', 'm') [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: 1989-20-7
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+05-14 22:34:40 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "1979-20-07"; SQL statement:
+insert into pessoa values(001,559293061,61,'2012-05-13','1979-20-07','murhail@hotmail.com',8737610991,8799703237,'murhail','Lucas Lopes','Aluno',07224489450,7990357,'ssppe','desert','m') -- (1, 559293061, 61, '2012-05-13', '1979-20-07', 'murhail@hotmail.com', 8737610991, 8799703237, 'murhail', 'Lucas Lopes', 'Aluno', 7224489450, 7990357, 'ssppe', 'desert', 'm') [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: 1979-20-7
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+05-14 22:34:42 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "1979-20-07"; SQL statement:
+insert into pessoa values(001,559293061,61,'2012-05-13','1979-20-07','murhail@hotmail.com',8737610991,8799703237,'murhail','Lucas Lopes','Aluno',07224489450,7990357,'ssppe','desert','m') -- (1, 559293061, 61, '2012-05-13', '1979-20-07', 'murhail@hotmail.com', 8737610991, 8799703237, 'murhail', 'Lucas Lopes', 'Aluno', 7224489450, 7990357, 'ssppe', 'desert', 'm') [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: 1979-20-7
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+05-14 22:35:03 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Numeric value out of range: "8737610991"; SQL statement:
+insert into pessoa values(001,559293061,61,'2012-05-13','1979-07-20','murhail@hotmail.com',8737610991,8799703237,'murhail','Lucas Lopes','Aluno',07224489450,7990357,'ssppe','desert','m') -- (1, 559293061, 61, '2012-05-13', '1979-07-20', 'murhail@hotmail.com', 8737610991, 8799703237, 'murhail', 'Lucas Lopes', 'Aluno', 7224489450, 7990357, 'ssppe', 'desert', 'm') [22003-166]
+05-14 22:35:14 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Numeric value out of range: "7224489450"; SQL statement:
+insert into pessoa values(001,559293061,61,'2012-05-13','1979-07-20','murhail@hotmail.com',37610991,99703237,'murhail','Lucas Lopes','Aluno',07224489450,7990357,'ssppe','desert','m') -- (1, 559293061, 61, '2012-05-13', '1979-07-20', 'murhail@hotmail.com', 37610991, 99703237, 'murhail', 'Lucas Lopes', 'Aluno', 7224489450, 7990357, 'ssppe', 'desert', 'm') [22003-166]
+05-14 22:41:38 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NSERT[*] INTTO ENDERECO VALUES(55290,61,'pe','centro','garanhuns','travesa pau pombo') "; SQL statement:
+nsert intto endereco values(55290,61,'pe','centro','garanhuns','travesa pau pombo') [42000-166]
+05-14 22:41:43 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTTO[*] ENDERECO VALUES(55290,61,'pe','centro','garanhuns','travesa pau pombo') "; expected "INTO"; SQL statement:
+insert intto endereco values(55290,61,'pe','centro','garanhuns','travesa pau pombo') [42001-166]
+05-14 22:45:09 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (PESSOA: NUMEND INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."PESSOA"("MATPESSOA","CEPEND","NUMEND","ULTACESSO","DATANASC","EMAIL","TEL1","TEL2","LOGIN","NOME","TIPO","CPF","RG","ORGEXP","SENHA","SEXO")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16) [22018-166]
+05-14 22:45:09 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (PESSOA: NUMEND INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."PESSOA"("MATPESSOA","CEPEND","NUMEND","ULTACESSO","DATANASC","EMAIL","TEL1","TEL2","LOGIN","NOME","TIPO","CPF","RG","ORGEXP","SENHA","SEXO")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16) [22018-166]
+05-19 16:59:20 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TESTES DELETE[*] COLUMN DTNASC "; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table testes delete column dtnasc [42001-166]
+05-19 17:08:21 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1383)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1361)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:264)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:120)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:93)
+	at aplicacao.Main.main(Main.java:57)
+05-19 17:15:47 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1383)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1361)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:264)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:120)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:93)
+	at aplicacao.Main.main(Main.java:72)
+05-19 17:22:12 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: The object is already closed [90007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1383)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1361)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:264)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:120)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:93)
+	at aplicacao.Main.main(Main.java:72)
+05-21 22:48:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "SENHA VARCHAR(12)": "'ronaldoehocara' (14)"; SQL statement:
+INSERT INTO TESTES VALUES(?,?,?,?) [22001-166]
+05-21 22:59:47 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "2012-26-03"; SQL statement:
+INSERT INTO "PUBLIC"."PESSOA"("MATPESSOA","CEPEND","NUMEND","ULTACESSO","DATANASC","EMAIL","TEL1","TEL2","LOGIN","NOME","TIPO","CPF","RG","ORGEXP","SENHA","SEXO")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:322)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2735)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1022)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: 2012-26-3
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 16 more
+05-21 22:59:47 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "2012-26-03"; SQL statement:
+INSERT INTO "PUBLIC"."PESSOA"("MATPESSOA","CEPEND","NUMEND","ULTACESSO","DATANASC","EMAIL","TEL1","TEL2","LOGIN","NOME","TIPO","CPF","RG","ORGEXP","SENHA","SEXO")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:143)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:129)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:322)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2735)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1022)
+	at org.h2.server.web.WebApp.process(WebApp.java:221)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:164)
+	at org.h2.server.web.WebThread.process(WebThread.java:137)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: 2012-26-3
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 16 more
+05-21 23:00:35 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'2012-01-02' (PESSOA: CEPEND INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."PESSOA"("MATPESSOA","CEPEND","NUMEND","ULTACESSO","DATANASC","EMAIL","TEL1","TEL2","LOGIN","NOME","TIPO","CPF","RG","ORGEXP","SENHA","SEXO")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16) [22018-166]
+05-21 23:00:35 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'2012-01-02' (PESSOA: CEPEND INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."PESSOA"("MATPESSOA","CEPEND","NUMEND","ULTACESSO","DATANASC","EMAIL","TEL1","TEL2","LOGIN","NOME","TIPO","CPF","RG","ORGEXP","SENHA","SEXO")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16) [22018-166]
+05-21 23:02:07 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'2012-01-02' (PESSOA: CEPEND INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."PESSOA"("MATPESSOA","CEPEND","NUMEND","ULTACESSO","DATANASC","EMAIL","TEL1","TEL2","LOGIN","NOME","TIPO","CPF","RG","ORGEXP","SENHA","SEXO")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16) [22018-166]
+05-21 23:02:07 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'2012-01-02' (PESSOA: CEPEND INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."PESSOA"("MATPESSOA","CEPEND","NUMEND","ULTACESSO","DATANASC","EMAIL","TEL1","TEL2","LOGIN","NOME","TIPO","CPF","RG","ORGEXP","SENHA","SEXO")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16) [22018-166]
+05-22 12:55:46 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM ADMINISTRADOR  WHERE MATPESSOA = 0ADMINISTRADOR[*] "; SQL statement:
+SELECT * FROM ADMINISTRADOR  where MATPESSOA = 0ADMINISTRADOR [42000-166]
+05-22 12:56:44 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "NOME" not found; SQL statement:
+select nome from administrador where matpessoa =0 [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-22 12:56:49 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "NOME" not found; SQL statement:
+select nome from administrador where matpessoa = 0 [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-23 12:10:37 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "ADMINISTRADOR.MATPESSOA" not found; SQL statement:
+select nome from pessoa where administrador.matpessoa = 0 [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Comparison.optimize(Comparison.java:159)
+	at org.h2.command.dml.Select.prepare(Select.java:802)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-23 12:14:00 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "PESSOA.NOME" not found; SQL statement:
+select pessoa.nome , administrador.matpessoa  where administrador.matpessoa = 0 [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-23 12:14:09 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "PESSOA.NOME" not found; SQL statement:
+select pessoa.nome , administrador.matpessoa [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-23 12:15:11 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT PESSOA.NOME , ADMINISTRADOR.MATPESSOA FROM PESSOA, ADMINISTRADOR , WHERE[*] ADMINISTRADOR.MATPESSOA = 0 "; expected "identifier"; SQL statement:
+select pessoa.nome , administrador.matpessoa from pessoa, administrador , where administrador.matpessoa = 0 [42001-166]
+05-23 12:17:56 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'2012-01-02' (PESSOA: CEPEND INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."PESSOA"("MATPESSOA","CEPEND","NUMEND","ULTACESSO","DATANASC","EMAIL","TEL1","TEL2","LOGIN","NOME","TIPO","CPF","RG","ORGEXP","SENHA","SEXO")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16) [22018-166]
+05-23 12:17:56 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'2012-01-02' (PESSOA: CEPEND INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."PESSOA"("MATPESSOA","CEPEND","NUMEND","ULTACESSO","DATANASC","EMAIL","TEL1","TEL2","LOGIN","NOME","TIPO","CPF","RG","ORGEXP","SENHA","SEXO")VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16) [22018-166]
+05-23 12:20:14 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ENDERECO"; expected "EXPLAIN, EXECUTE, {"; SQL statement:
+ENDERECO [42001-166]
+05-23 12:22:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ADMINISTRADOR"; expected "ALTER, ANALYZE, {"; SQL statement:
+ADMINISTRADOR [42001-166]
+05-23 12:23:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT PESSOA.NOME , ADMINISTRADOR.MATPESSOA FROM PESSOA, ADMINISTRADOR WHERE ADMINISTRADOR..[*]MATPESSOA = 0 "; expected "identifier"; SQL statement:
+select pessoa.nome , administrador.matpessoa from pessoa, administrador where administrador..matpessoa = 0 [42001-166]
+05-23 12:23:28 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT PESSOA.NOME , ADMINISTRADOR.MATPESSOA FROM PESSOA, ADMINISTRADOR WHERE ADMINISTRADOR..[*]MATPESSOA = PESSOA.MATPESSOA "; expected "identifier"; SQL statement:
+select pessoa.nome , administrador.matpessoa from pessoa, administrador where administrador..matpessoa = pessoa.matpessoa [42001-166]
+05-23 12:24:41 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "PESSOA"; expected "PREPARE, {"; SQL statement:
+PESSOA [42001-166]
+05-23 22:39:50 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ALUNO RENAME COLUMN[*] NOEMPAI (NOMEPAI) "; expected "TO"; SQL statement:
+alter table aluno rename column noempai (nomepai) [42001-166]
+05-23 22:39:59 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ALUNO RENAME COLUMN[*] NOEMPAI TO NOMEPAI "; expected "TO"; SQL statement:
+alter table aluno rename column noempai to nomepai [42001-166]
+05-23 22:42:13 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ALUNO RENAME COLUMN[*] NOEMPAI TO NOMEPAI "; expected "TO"; SQL statement:
+alter table aluno rename column noempai to nomepai [42001-166]
+05-24 12:16:27 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column count does not match; SQL statement:
+  INSERT INTO ENDERECO VALUES (?,?,?,?) [21002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:226)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:266)
+	at infraestrutura.BancoDados.executarInsercao(BancoDados.java:74)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:123)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:91)
+	at aplicacao.Main.main(Main.java:72)
+05-24 12:26:26 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ENDERECO"; expected "EXPLAIN, EXECUTE, {"; SQL statement:
+ENDERECO [42001-166]
+05-24 12:35:46 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+  INSERT INTO ENDERECO VALUES (?,?,?,?,?,?) [90012-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:162)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:181)
+	at infraestrutura.BancoDados.executarInsercao(BancoDados.java:75)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:131)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:91)
+	at aplicacao.Main.main(Main.java:72)
+05-24 12:36:23 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "ESTADO VARCHAR(2)": "'Garanhuns' (9)"; SQL statement:
+  INSERT INTO ENDERECO VALUES (?,?,?,?,?,?) [22001-166]
+05-24 22:16:49 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "ESTADO VARCHAR(2)": "'Garanhuns' (9)"; SQL statement:
+  INSERT INTO ENDERECO VALUES (?,?,?,?,?,?) [22001-166]
+05-24 22:17:59 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "ESTADO VARCHAR(2)": "'Gus' (3)"; SQL statement:
+  INSERT INTO ENDERECO VALUES (?,?,?,?,?,?) [22001-166]
+05-24 22:18:42 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+  INSERT INTO ENDERECO VALUES (?,?,?,?,?,?) [90012-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:162)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:181)
+	at infraestrutura.BancoDados.executarInsercao(BancoDados.java:75)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:131)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:91)
+	at aplicacao.Main.main(Main.java:72)
+05-24 22:26:05 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "LOGIN" not found [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2882)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:283)
+	at infraestrutura.RepositorioPessoaBD.recuperarPessoas(RepositorioPessoaBD.java:34)
+	at aplicacao.Fachada.recuperarPessoas(Fachada.java:57)
+	at aplicacao.Main.main(Main.java:41)
+05-24 22:26:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "LOGIN" not found [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2882)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:283)
+	at infraestrutura.RepositorioPessoaBD.recuperarPessoas(RepositorioPessoaBD.java:34)
+	at aplicacao.Main.main(Main.java:53)
+05-24 22:29:59 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "LOGIN" not found [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2882)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:283)
+	at infraestrutura.RepositorioPessoaBD.recuperarPessoas(RepositorioPessoaBD.java:34)
+	at aplicacao.Fachada.recuperarPessoas(Fachada.java:57)
+	at aplicacao.Main.main(Main.java:41)
+05-24 22:29:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "LOGIN" not found [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2882)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:283)
+	at infraestrutura.RepositorioPessoaBD.recuperarPessoas(RepositorioPessoaBD.java:34)
+	at aplicacao.Main.main(Main.java:53)
+05-24 22:29:59 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "ESTADO VARCHAR(2)": "'Gus' (3)"; SQL statement:
+INSERT INTO ENDERECO VALUES (?,?,?,?,?,?) [22001-166]
+05-24 22:32:56 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "LOGIN" not found [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2882)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:283)
+	at infraestrutura.RepositorioPessoaBD.recuperarPessoas(RepositorioPessoaBD.java:34)
+	at aplicacao.Fachada.recuperarPessoas(Fachada.java:57)
+	at aplicacao.Main.main(Main.java:41)
+05-24 22:32:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "LOGIN" not found [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2882)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:283)
+	at infraestrutura.RepositorioPessoaBD.recuperarPessoas(RepositorioPessoaBD.java:34)
+	at aplicacao.Main.main(Main.java:53)
+05-24 22:32:56 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "ESTADO VARCHAR(2)": "'Gus' (3)"; SQL statement:
+INSERT INTO ENDERECO VALUES(?,?,?,?,?,?) [22001-166]
+05-24 22:33:42 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "ESTADO VARCHAR(2)": "'Gus' (3)"; SQL statement:
+INSERT INTO ENDERECO VALUES(?,?,?,?,?,?) [22001-166]
+05-24 22:35:18 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+INSERT INTO ENDERECO VALUES(?,?,?,?,?,?) [90012-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:162)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:181)
+	at infraestrutura.BancoDados.executarInsercao(BancoDados.java:75)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:131)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:91)
+	at aplicacao.Main.main(Main.java:72)
+05-24 22:36:17 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+INSERT INTO ENDERECO VALUES(?,?,?,?,?,?) [90012-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:162)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:181)
+	at infraestrutura.BancoDados.executarInsercao(BancoDados.java:75)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:131)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:91)
+	at aplicacao.Main.main(Main.java:72)
+05-24 22:41:41 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+INSERT INTO ENDERECO VALUES(?,?,?,?,?,?) [90012-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:162)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:181)
+	at infraestrutura.BancoDados.executarInsercao(BancoDados.java:75)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:131)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:91)
+	at aplicacao.Main.main(Main.java:72)
+05-24 22:43:07 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "ESTADO VARCHAR(2)": "'Belo Horizonte' (14)"; SQL statement:
+INSERT INTO ENDERECO VALUES(?,?,?,?,?,?) [22001-166]
+05-24 22:45:00 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+INSERT INTO ENDERECO VALUES(?,?,?,?,?,?) [90012-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:162)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:181)
+	at infraestrutura.BancoDados.executarInsercao(BancoDados.java:75)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:131)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:91)
+	at aplicacao.Main.main(Main.java:72)
+05-25 12:03:09 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE PESSOA UPDATE[*] COLUMN NOME VALUE('Osvaldo Caxiado') "; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table pessoa update column nome value('Osvaldo Caxiado') [42001-166]
+05-25 12:16:25 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM ENDERECO CEP =[*] '55293061' "; SQL statement:
+SELECT * FROM ENDERECO cep = '55293061' [42000-166]
+05-25 12:18:54 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT *.[*]ENDERECO,*.PESSOA FROM ENDERECO ,PESSOA  WHERE CEPEND = '55293061' AND NUMEND = '61' "; SQL statement:
+SELECT *.endereco,*.pessoa from ENDERECO ,pessoa  where CEPEND = '55293061' and NUMEND = '61' [42000-166]
+05-25 12:24:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "PESSOA"; expected "PREPARE, {"; SQL statement:
+PESSOA [42001-166]
+05-25 12:26:34 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "ENDEECO" not found; SQL statement:
+select pessoa.nome, endeeco.* from pessoa, endereco where pessoa.nome = 'Lucas' [42102-166]
+05-25 12:27:56 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "PESSOA.CEP" not found; SQL statement:
+select pessoa.nome, endereco.* from pessoa, endereco where pessoa.nome = 'Lucas' and pessoa.cep = '55293061' and pessoa.numend = '61' [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Comparison.optimize(Comparison.java:159)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:127)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:126)
+	at org.h2.command.dml.Select.prepare(Select.java:802)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-26 18:34:17 database: close
+org.h2.message.DbException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.convert(DbException.java:269)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:180)
+	at org.h2.engine.Database.close(Database.java:1109)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:80)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convert(DbException.java:277)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:174)
+	... 2 more
+Caused by: java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:186)
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:178)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	... 4 more
+Caused by: java.lang.ClassNotFoundException: org.h2.index.PageBtreeCursor
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1678)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1523)
+	... 16 more
+05-28 12:15:59 database: close
+org.h2.message.DbException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.convert(DbException.java:269)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:180)
+	at org.h2.engine.Database.close(Database.java:1109)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:80)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convert(DbException.java:277)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:174)
+	... 2 more
+Caused by: java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:186)
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:178)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	... 4 more
+Caused by: java.lang.ClassNotFoundException: org.h2.index.PageBtreeCursor
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1678)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1523)
+	... 16 more
+05-29 11:53:14 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "HORARIO"; expected "HELP, {"; SQL statement:
+HORARIO [42001-166]
+05-29 12:00:21 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "TURM.COD" not found; SQL statement:
+select horario.* , turm.cod from horario [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-29 12:00:24 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "TURMA.COD" not found; SQL statement:
+select horario.* , turma.cod from horario [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-29 12:00:33 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TURMA"; expected "TRUNCATE, {"; SQL statement:
+TURMA [42001-166]
+05-29 23:11:25 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * DISCIPLINA[*] "; SQL statement:
+SELECT * disciplina [42000-166]
+05-31 12:15:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TURMAA" not found; SQL statement:
+SELECT * FROM turmaA [42102-166]
+05-31 12:15:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TURMAA" not found; SQL statement:
+SELECT * FROM turmaA [42102-166]
+05-31 12:15:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "DELETE" not found; SQL statement:
+alter table delete column idmsg [42102-166]
+05-31 12:15:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE "; expected "identifier"; SQL statement:
+alter table [42001-166]
+05-31 12:15:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TURMA "; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table turma [42001-166]
+05-31 12:16:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TURMA DROP "; expected "identifier"; SQL statement:
+alter table turma drop [42001-166]
+05-31 12:25:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "FOREIGN[*] KEY(CODTURMA) REFERENCES TURMA (CODTURMA) "; expected "FROM, {"; SQL statement:
+FOREIGN KEY(codTurma) REFERENCES TURMA (codTurma) [42001-166]
+05-31 12:26:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "FOREIGN[*] KEY(CODTURMA) REFERENCES TURMA (COD) "; expected "FROM, {"; SQL statement:
+FOREIGN KEY(codTurma) REFERENCES turma (cod) [42001-166]
+05-31 12:26:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "FOREIGN[*] KEY(CODTURMA) REFERENCES TURMA (CODTURMA) "; expected "FROM, {"; SQL statement:
+FOREIGN KEY(codTurma) REFERENCES turma (codTURMA) [42001-166]
+05-31 12:26:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "CODTURMA" not found; SQL statement:
+alter table mensagens add FOREIGN KEY(codTurma) REFERENCES turma (codTURMA) [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.table.Table.getColumn(Table.java:596)
+	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:75)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:196)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:68)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-31 12:26:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Unknown data type: "KEY"; SQL statement:
+alter table mensagens add column FOREIGN KEY(codTurma) REFERENCES turma (codTURMA) [50004-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3654)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3517)
+	at org.h2.command.Parser.parseAlterTableAddColumn(Parser.java:4969)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:4814)
+	at org.h2.command.Parser.parseAlter(Parser.java:4315)
+	at org.h2.command.Parser.parsePrepared(Parser.java:306)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-31 18:26:38 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (TURMA: QTDMSG INT)"; SQL statement:
+INSERT INTO "PUBLIC"."TURMA"("COD","TURNO","NOME","QTDMSG","CLASSE","ANO")VALUES(?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6) [22018-166]
+05-31 18:26:38 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (TURMA: QTDMSG INT)"; SQL statement:
+INSERT INTO "PUBLIC"."TURMA"("COD","TURNO","NOME","QTDMSG","CLASSE","ANO")VALUES(?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6) [22018-166]
+05-31 18:42:37 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TURMA"; expected "TRUNCATE, {"; SQL statement:
+TURMA [42001-166]
+05-31 18:45:20 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TURMA RENAME "; expected "TO"; SQL statement:
+alter table turma rename [42001-166]
+05-31 18:45:25 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TURMA "; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table turma [42001-166]
+05-31 18:45:34 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TURMA  SET "; expected "REFERENTIAL_INTEGRITY"; SQL statement:
+alter table turma  set [42001-166]
+05-31 18:45:40 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TURMA  SET NOME[*] "; expected "REFERENTIAL_INTEGRITY"; SQL statement:
+alter table turma  set nome [42001-166]
+05-31 18:47:06 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TURMA  CHANGE[*] NOME SERIE "; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table turma  change nome serie [42001-166]
+05-31 18:47:33 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TURMA  CHANGE[*] NOME SERIE VARCHAR (12) "; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table turma  change nome serie VARCHAR (12) [42001-166]
+05-31 18:49:28 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE TURMA CHANGE[*] NOME SERIA VARCHAR(12) "; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER table TURMA change nome seria varchar(12) [42001-166]
+05-31 19:52:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "COD" not found; SQL statement:
+select max(cod) from pessoa [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Aggregate.optimize(Aggregate.java:358)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+05-31 20:27:34 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-166]
+05-31 20:27:48 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-166]
+05-31 20:31:09 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-166]
+05-31 20:35:44 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-166]
+05-31 20:39:16 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-166]
+05-31 20:39:35 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-166]
+05-31 21:32:48 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#3" is not set; SQL statement:
+INSERT INTO DISCIPLINA VALUES(?,?,?,?,?) [90012-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:162)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:72)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:181)
+	at infraestrutura.RepositorioDisciplinaBD.adicionarDisciplina(RepositorioDisciplinaBD.java:44)
+	at aplicacao.Fachada.adicionarDisciplina(Fachada.java:137)
+	at aplicacao.Main.main(Main.java:88)
+05-31 22:14:51 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "MATPESSOA" not found [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2907)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:315)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:193)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:77)
+	at apresentação.CadastroAlunoServlet.processRequest(CadastroAlunoServlet.java:76)
+	at apresentação.CadastroAlunoServlet.doGet(CadastroAlunoServlet.java:173)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.netbeans.modules.web.monitor.server.MonitorFilter.doFilter(MonitorFilter.java:393)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:964)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:302)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+06-01 18:07:47 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "MATPESSOA" not found [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2907)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:315)
+	at infraestrutura.RepositorioPessoaBD.adicionarPessoa(RepositorioPessoaBD.java:193)
+	at aplicacao.Fachada.adicionarPessoa(Fachada.java:77)
+	at apresentação.CadastroAlunoServlet.processRequest(CadastroAlunoServlet.java:76)
+	at apresentação.CadastroAlunoServlet.doGet(CadastroAlunoServlet.java:173)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.netbeans.modules.web.monitor.server.MonitorFilter.doFilter(MonitorFilter.java:393)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:964)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:302)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+06-01 18:09:23 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE PESSOA "; expected "., AS, SET"; SQL statement:
+update pessoa [42001-166]
+06-01 18:09:34 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE PESSOA SET SENHA "; expected "., ="; SQL statement:
+update pessoa set senha [42001-166]
+06-01 18:09:52 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "PESSOA"; expected "PREPARE, {"; SQL statement:
+PESSOA [42001-166]
+06-01 18:13:28 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "DROP" not found; SQL statement:
+alter table drop [42102-166]
+06-01 18:13:39 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE PESSOA "; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table pessoa [42001-166]
+06-01 18:13:42 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE PESSOA DROP "; expected "identifier"; SQL statement:
+alter table pessoa drop [42001-166]
+06-01 20:02:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "MATPESSOA" not found [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2907)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:315)
+	at infraestrutura.RepositorioPessoaBD.adicionarAluno(RepositorioPessoaBD.java:358)
+	at aplicacao.Fachada.adicionarAluno(Fachada.java:212)
+	at aplicacao.Main.main(Main.java:98)
+06-01 20:07:57 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column count does not match; SQL statement:
+insert into turma values(5,'Tarde',0,'B','B','2008','7') [21002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:226)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+06-01 20:08:48 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TURMA VALUES(6,'Tarde',0,'C','2008','9')
+INSERT[*] INTO TURMA VALUES(6,'Manhã',0,'A','2008','8') "; SQL statement:
+insert into turma values(6,'Tarde',0,'C','2008','9')
+insert into turma values(6,'Manhã',0,'A','2008','8') [42000-166]
+06-01 20:09:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TURMA VALUES(6,'Tarde',0,'C','2008','9'),
+INSERT[*] INTO TURMA VALUES(6,'Manhã',0,'A','2008','8') "; SQL statement:
+insert into turma values(6,'Tarde',0,'C','2008','9'),
+insert into turma values(6,'Manhã',0,'A','2008','8') [42000-166]
+06-01 20:11:02 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "String sql = [*]""SELECT COD FROM TURMA WHERE SERIE = '8' AND TURNO = 'Tarde' AND CLASSE =  'A' AND ANO = '2008'"; SQL statement:
+String sql = "SELECT COD FROM TURMA WHERE SERIE = '8' AND TURNO = 'Tarde' AND CLASSE =  'A' AND ANO = '2008' [42000-166]
+06-01 21:31:35 database: close
+org.h2.message.DbException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.convert(DbException.java:269)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:180)
+	at org.h2.engine.Database.close(Database.java:1109)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:80)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convert(DbException.java:277)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:174)
+	... 2 more
+Caused by: java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:186)
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:178)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	... 4 more
+Caused by: java.lang.ClassNotFoundException: org.h2.index.PageBtreeCursor
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1678)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1523)
+	... 16 more
+06-01 22:25:05 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ADMINISTRADOR SET DATAADM[*] VARCHAR (10) "; expected "REFERENTIAL_INTEGRITY"; SQL statement:
+alter table administrador set dataadm varchar (10) [42001-166]
+06-01 22:26:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "ADMINISTRADOR" already exists; SQL statement:
+CREATE TABLE Administrador (
+matPessoa INT NOT NULL,
+dataAdm Date,
+PRIMARY KEY (matPessoa),
+FOREIGN KEY(matPessoa) REFERENCES Pessoa (matPessoa)
+) [42101-166]
+06-01 22:26:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ADMINISTRADOR"; expected "ALTER, ANALYZE, {"; SQL statement:
+ADMINISTRADOR [42001-166]
+06-01 22:36:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column count does not match; SQL statement:
+INSERT INTO ALUNO VALUES (?,?) [21002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:226)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:266)
+	at infraestrutura.RepositorioPessoaBD.adicionarAdministrador(RepositorioPessoaBD.java:531)
+	at aplicacao.Fachada.adicionarAdministrador(Fachada.java:252)
+	at aplicacao.Main.main(Main.java:91)
+06-02 15:10:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE PESSOA "; expected "., AS, SET"; SQL statement:
+update pessoa [42001-166]
+06-02 15:39:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE ENDERECO SET CEP = '55290000' NUM[*] = '72' WHERE CEP = '55293061' AND NUM = '61' "; SQL statement:
+update endereco set cep = '55290000' num = '72' where cep = '55293061' and num = '61' [42000-166]
+06-02 15:40:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE ENDERECO SET CEP = '55290000' NUM[*] = '72' WHERE CEP = '55293061' AND NUM = '61' "; SQL statement:
+update endereco set cep = '55290000' num = '72' where cep = '55293061' and num = '61' [42000-166]
+06-02 16:04:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE ENDERECO SET CEP = '000' ,NUM = '025' ,ESTADO = 'PR' ' ,BAIRRO = 'West London' ' ,CIDADE = 'London' ' ,RUA = '7 St'  WHERE CEP = '55298078' AND  NUM = '025[*]' "; SQL statement:
+UPDATE ENDERECO SET CEP = '000' ,NUM = '025' ,ESTADO = 'PR' ' ,BAIRRO = 'West London' ' ,CIDADE = 'London' ' ,RUA = '7 St'  WHERE CEP = '55298078' AND  NUM = '025'  [42000-166]
+06-02 16:06:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE ENDERECO SET CEP = '000' , NUM = '025' , ESTADO = 'PR' ' , BAIRRO = 'West London' ' , CIDADE = 'London' ' , RUA = '7 St'  WHERE CEP = '55298078' AND  NUM = '025[*]' "; SQL statement:
+UPDATE ENDERECO SET CEP = '000' , NUM = '025' , ESTADO = 'PR' ' , BAIRRO = 'West London' ' , CIDADE = 'London' ' , RUA = '7 St'  WHERE CEP = '55298078' AND  NUM = '025'  [42000-166]
+06-02 16:30:18 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ENDERECO"; expected "EXPLAIN, EXECUTE, {"; SQL statement:
+ENDERECO [42001-166]
+06-02 16:38:22 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP ENDERECO[*] WHERE ESTADO = RJ "; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE"; SQL statement:
+drop endereco where estado = rj [42001-166]
+06-02 16:38:49 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "delete endereco where estado = [*]'rj"; SQL statement:
+delete endereco where estado = 'rj [42000-166]
+06-02 17:54:23 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SEPESSOA"; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+SEPESSOA [42001-166]
+06-02 20:10:40 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ENDERECO.*, PESSOA.* , ALUNO.* FROM ENDERECO , PESSOA ,  ALUNO WHERE ALUNO.MATPESSOA = 2,[*] AND PESSOA.MATPESSOA = ALUNO.MATPESSOA "; SQL statement:
+select endereco.*, pessoa.* , aluno.* from endereco , pessoa ,  aluno where aluno.matpessoa = 2, and pessoa.matpessoa = aluno.matpessoa [42000-166]
+06-02 20:13:53 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Scalar subquery contains more than one row; SQL statement:
+select select pessoa.* , endereco.* from pessoa , endereco [90053-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.expression.Subquery.getValue(Subquery.java:40)
+	at org.h2.command.dml.Select.queryFlat(Select.java:519)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:173)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+06-02 20:15:49 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "PE" not found; SQL statement:
+SELECT * FROM pe [42102-166]
+06-02 20:20:27 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT PESSOA.* , ALUNO.* , ENDERECO.* FROM PESSOA , ALUNO ,ENDERECO WHERE PESSOA.CEPEND = ENDERECO.CEP AND ALUNO.MATPESSOA = PESSOA.MATPESSOA SELECT[*] * FROM PESSOA "; SQL statement:
+select pessoa.* , aluno.* , endereco.* from pessoa , aluno ,endereco where pessoa.cepend = endereco.cep and aluno.matpessoa = pessoa.matpessoa SELECT * FROM PESSOA [42000-166]
+06-02 20:25:29 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE FROM PESSOA ,[*] ALUNO ,ENDERECO WHERE PESSOA.CEPEND = ENDERECO.CEP AND ALUNO.MATPESSOA = PESSOA.MATPESSOA AND PESSOA.NUMEND = ENDERECO.NUM  AND ALUNO.MATPESSOA = 28 "; SQL statement:
+delete from pessoa , aluno ,endereco where pessoa.cepend = endereco.cep and aluno.matpessoa = pessoa.matpessoa and pessoa.numend = endereco.num  and aluno.matpessoa = 28 [42000-166]
+06-02 20:45:48 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+SELECT PESSOA.* , ALUNO.* ENDERECO.* FROM PESSOA , ALUNO , ENDERECO WHERE PESSOA.CEPEND = ENDERECO.CEP ANDALUNO.MATPESSOA  = PESSOA.MATPESSOA AND PESSOA.NUMEND = ENDERECO.NUM AND ALUNO.MATPESSOA = '28' [42102-166]
+06-02 20:47:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PESSOA" not found; SQL statement:
+SELECT PESSOA.* , ALUNO.* ENDERECO.* FROM PESSOA , ALUNO , ENDERECO WHERE PESSOA.CEPEND = ENDERECO.CEP ANDALUNO.MATPESSOA  = PESSOA.MATPESSOA AND PESSOA.NUMEND = ENDERECO.NUM AND ALUNO.MATPESSOA = '28' [42102-166]
+06-02 20:48:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT PESSOA.* , ALUNO.*, ENDERECO.* FROM PESSOA , ALUNO , ENDERECO WHERE PESSOA.CEPEND = ENDERECO.CEP ANDALUNO[*].MATPESSOA  = PESSOA.MATPESSOA AND PESSOA.NUMEND = ENDERECO.NUM AND ALUNO.MATPESSOA = '28'"; SQL statement:
+SELECT PESSOA.* , ALUNO.*, ENDERECO.* FROM PESSOA , ALUNO , ENDERECO WHERE PESSOA.CEPEND = ENDERECO.CEP ANDALUNO.MATPESSOA  = PESSOA.MATPESSOA AND PESSOA.NUMEND = ENDERECO.NUM AND ALUNO.MATPESSOA = '28' [42000-166]
+06-02 20:55:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "CEPEND" not found; SQL statement:
+DELETE FROM ENDERECO WHERE CEPEND = '55293062' AND NUMEND = '61' [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Comparison.optimize(Comparison.java:159)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:126)
+	at org.h2.command.dml.Delete.prepare(Delete.java:125)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:266)
+	at infraestrutura.RepositorioPessoaBD.removerAluno(RepositorioPessoaBD.java:447)
+	at aplicacao.Fachada.removerAluno(Fachada.java:218)
+	at aplicacao.Main.main(Main.java:88)
+06-05 11:53:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "null"; SQL statement:
+DELETE FROM PESSOA WHERE MATPESSOA = 'null' [22018-166]
+06-05 12:10:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "PROFESSOR.MATPESSOA" not found; SQL statement:
+SELECT PESSOA.* , ADMINISTRADOR.*, ENDERECO.* FROM PESSOA , ADMINISTRADOR , ENDERECO WHERE PESSOA.CEPEND = ENDERECO.CEP AND ADMINISTRADOR.MATPESSOA  = PESSOA.MATPESSOA AND PESSOA.NUMEND = ENDERECO.NUM AND PROFESSOR.MATPESSOA = '30' [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Comparison.optimize(Comparison.java:159)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:127)
+	at org.h2.command.dml.Select.prepare(Select.java:802)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:266)
+	at infraestrutura.BancoDados.executarConsulta(BancoDados.java:65)
+	at infraestrutura.RepositorioPessoaBD.removerAdministrador(RepositorioPessoaBD.java:817)
+	at aplicacao.Fachada.removerAdministrador(Fachada.java:250)
+	at aplicacao.Main.main(Main.java:90)
+06-07 11:16:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "CLASSE VARCHAR(2)": "'Ano' (3)"; SQL statement:
+INSERT INTO TURMA VALUES (?,?,?,?,?,?) [22001-166]
+06-07 11:48:42 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "CLASSE VARCHAR(2)": "'Ano' (3)"; SQL statement:
+INSERT INTO TURMA VALUES (?,?,?,?,?,?) [22001-166]
+06-07 11:48:42 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Column count does not match; SQL statement:
+INSERT INTO HORARIO VALUES (?,?,?,?,?,?) [21002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:226)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:266)
+	at infraestrutura.RepositorioTurmaBD.alterarTurma(RepositorioTurmaBD.java:174)
+	at aplicacao.Fachada.alterarTurma(Fachada.java:168)
+	at aplicacao.Main.main(Main.java:93)
+06-07 11:50:13 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "CLASSE VARCHAR(2)": "'2005' (4)"; SQL statement:
+INSERT INTO TURMA VALUES (?,?,?,?,?,?) [22001-166]
+06-07 11:53:41 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "CLASSE VARCHAR(2)": "'2005' (4)"; SQL statement:
+INSERT INTO TURMA VALUES (?,?,?,?,?,?) [22001-166]
+06-07 12:26:11 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SHORARIO[*] LECT * FROM TURMA"; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+SHORARIO LECT * FROM TURMA [42001-166]
+06-07 13:37:03 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (DISCIPLINA: COD INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."DISCIPLINA"("COD","HORARIOCOD","NOME","DESCRICAO","CARGAHORARIA")VALUES(?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5) [22018-166]
+06-07 13:37:03 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (DISCIPLINA: COD INT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."DISCIPLINA"("COD","HORARIOCOD","NOME","DESCRICAO","CARGAHORARIA")VALUES(?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5) [22018-166]
+06-07 17:35:13 database: close
+org.h2.message.DbException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.convert(DbException.java:269)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:180)
+	at org.h2.engine.Database.close(Database.java:1109)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:80)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convert(DbException.java:277)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:174)
+	... 2 more
+Caused by: java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:186)
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:178)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	... 4 more
+Caused by: java.lang.ClassNotFoundException: org.h2.index.PageBtreeCursor
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1678)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1523)
+	... 16 more
+06-07 17:59:17 database: close
+org.h2.message.DbException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.convert(DbException.java:269)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:180)
+	at org.h2.engine.Database.close(Database.java:1109)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:80)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convert(DbException.java:277)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:174)
+	... 2 more
+Caused by: java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:186)
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:178)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	... 4 more
+Caused by: java.lang.ClassNotFoundException: org.h2.index.PageBtreeCursor
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1678)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1523)
+	... 16 more
+06-07 18:24:18 database: close
+org.h2.message.DbException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.convert(DbException.java:269)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:180)
+	at org.h2.engine.Database.close(Database.java:1109)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:80)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convert(DbException.java:277)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:174)
+	... 2 more
+Caused by: java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:186)
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:178)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	... 4 more
+Caused by: java.lang.ClassNotFoundException: org.h2.index.PageBtreeCursor
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1678)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1523)
+	... 16 more
+06-09 16:35:43 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "LUCAS" not found; SQL statement:
+SELECT * FROM PESSOA  where nome = Lucas [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Comparison.optimize(Comparison.java:161)
+	at org.h2.command.dml.Select.prepare(Select.java:802)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+06-09 16:35:59 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PESSOA  WHERE NOME LIKE %[*]'Lucas' "; expected "SELECT, FROM"; SQL statement:
+SELECT * FROM PESSOA  where nome like %'Lucas' [42001-166]
+06-09 16:37:20 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PESSOA  WHERE LIKE[*] NOME ""%luis%"" "; expected "NOT, EXISTS, SELECT, FROM"; SQL statement:
+SELECT * FROM PESSOA  where like nome "%luis%" [42001-166]
+06-09 16:37:38 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PESSOA  WHERE LIKE[*] NOME ""%Lucas%"" "; expected "NOT, EXISTS, SELECT, FROM"; SQL statement:
+SELECT * FROM PESSOA  where like nome "%Lucas%" [42001-166]
+06-09 16:37:40 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PESSOA  WHERE LIKE[*] NOME ""%Lucas"" "; expected "NOT, EXISTS, SELECT, FROM"; SQL statement:
+SELECT * FROM PESSOA  where like nome "%Lucas" [42001-166]
+06-09 16:37:46 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PESSOA  WHERE LIKE[*] NOME ""Lucas%"" "; expected "NOT, EXISTS, SELECT, FROM"; SQL statement:
+SELECT * FROM PESSOA  where like nome "Lucas%" [42001-166]
+06-09 16:38:25 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PESSOA  WHERE LIKE[*] NOME '%Lucas%""' "; expected "NOT, EXISTS, SELECT, FROM"; SQL statement:
+SELECT * FROM PESSOA  where like nome '%Lucas%"' [42001-166]
+06-09 16:38:30 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PESSOA  WHERE LIKE[*] NOME '%Lucas%' "; expected "NOT, EXISTS, SELECT, FROM"; SQL statement:
+SELECT * FROM PESSOA  where like nome '%Lucas%' [42001-166]
+06-09 16:38:34 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PESSOA  WHERE LIKE[*] NOME '%Lucas' "; expected "NOT, EXISTS, SELECT, FROM"; SQL statement:
+SELECT * FROM PESSOA  where like nome '%Lucas' [42001-166]
+06-09 16:38:38 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PESSOA  WHERE LIKE[*] NOME '%Lucas%' "; expected "NOT, EXISTS, SELECT, FROM"; SQL statement:
+SELECT * FROM PESSOA  where like nome '%Lucas%' [42001-166]
+06-09 16:46:39 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "ALUNO.NOME" not found; SQL statement:
+select aluno.*, pessoa.*, endereco.* from aluno, pessoa, endereco where aluno.nome like  '%Lucas%'  and aluno.matpessoa = pessoa.matpessoa  and pessoa.cepend = endereco.cep and pessoa.numend = endereco.num [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.CompareLike.optimize(CompareLike.java:84)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:126)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:126)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:126)
+	at org.h2.command.dml.Select.prepare(Select.java:802)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+06-09 16:54:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "select aluno.*, pessoa.*, endereco.* from aluno, pessoa, endereco where aluno.nome like'%Lucas%'Lucas[*]' and aluno.matpessoa = pessoa.matpessoa and pessoa.cepend = endereco.cep and pessoa.numend = endereco.num;"; SQL statement:
+select aluno.*, pessoa.*, endereco.* from aluno, pessoa, endereco where aluno.nome like'%Lucas%'Lucas' and aluno.matpessoa = pessoa.matpessoa and pessoa.cepend = endereco.cep and pessoa.numend = endereco.num; [42000-166]
+06-09 16:55:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "select aluno.*, pessoa.*, endereco.* from aluno, pessoa, endereco where pessoa.nome like'%Lucas%'Lucas[*]' and aluno.matpessoa = pessoa.matpessoa and pessoa.cepend = endereco.cep and pessoa.numend = endereco.num;"; SQL statement:
+select aluno.*, pessoa.*, endereco.* from aluno, pessoa, endereco where pessoa.nome like'%Lucas%'Lucas' and aluno.matpessoa = pessoa.matpessoa and pessoa.cepend = endereco.cep and pessoa.numend = endereco.num; [42000-166]
+06-09 17:05:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ALUNO.*, PESSOA.*, ENDERECO.* FROM ALUNO, PESSOA, ENDERECO WHERE PESSOA.NOME LIKE'%Lucas%'LUCAS[*] AND ALUNO.MATPESSOA = PESSOA.MATPESSOA AND PESSOA.CEPEND = ENDERECO.CEP AND PESSOA.NUMEND = ENDERECO.NUM; "; SQL statement:
+select aluno.*, pessoa.*, endereco.* from aluno, pessoa, endereco where pessoa.nome like'%Lucas%'Lucas and aluno.matpessoa = pessoa.matpessoa and pessoa.cepend = endereco.cep and pessoa.numend = endereco.num; [42000-166]
+06-09 21:30:14 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "negadis"; SQL statement:
+select nome from pessoa where login = 1 and senha = '123' [22018-166]
+06-10 11:47:52 database: close
+org.h2.message.DbException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.convert(DbException.java:269)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:180)
+	at org.h2.engine.Database.close(Database.java:1109)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:80)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor"; SQL statement:
+SELECT ID FROM INFORMATION_SCHEMA.LOBS WHERE TABLE = ? [50000-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convert(DbException.java:277)
+	at org.h2.command.Command.executeQuery(Command.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at org.h2.store.LobStorage.removeAllForTable(LobStorage.java:174)
+	... 2 more
+Caused by: java.lang.NoClassDefFoundError: org/h2/index/PageBtreeCursor
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:186)
+	at org.h2.index.PageBtreeIndex.find(PageBtreeIndex.java:178)
+	at org.h2.index.BaseIndex.find(BaseIndex.java:102)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:145)
+	at org.h2.table.TableFilter.next(TableFilter.java:322)
+	at org.h2.command.dml.Select.queryFlat(Select.java:513)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	... 4 more
+Caused by: java.lang.ClassNotFoundException: org.h2.index.PageBtreeCursor
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1678)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1523)
+	... 16 more
+06-13 12:50:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "W" not found; SQL statement:
+SELECT * FROM TURMA WHERE ANO = w [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Comparison.optimize(Comparison.java:161)
+	at org.h2.command.dml.Select.prepare(Select.java:802)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:266)
+	at infraestrutura.BancoDados.executarConsulta(BancoDados.java:65)
+	at infraestrutura.RepositorioTurmaBD.pesquisarTurmaPorAno(RepositorioTurmaBD.java:386)
+	at aplicacao.Fachada.pesquisarTurmaPorAno(Fachada.java:301)
+	at apresentação.Cadastro.processRequest(Cadastro.java:94)
+	at apresentação.Cadastro.doGet(Cadastro.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.netbeans.modules.web.monitor.server.MonitorFilter.doFilter(MonitorFilter.java:393)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:964)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:304)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+06-13 12:53:47 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "G" not found; SQL statement:
+SELECT * FROM TURMA WHERE ANO = g [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Comparison.optimize(Comparison.java:161)
+	at org.h2.command.dml.Select.prepare(Select.java:802)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:266)
+	at infraestrutura.BancoDados.executarConsulta(BancoDados.java:65)
+	at infraestrutura.RepositorioTurmaBD.pesquisarTurmaPorAno(RepositorioTurmaBD.java:386)
+	at aplicacao.Fachada.pesquisarTurmaPorAno(Fachada.java:301)
+	at apresentação.Cadastro.processRequest(Cadastro.java:94)
+	at apresentação.Cadastro.doGet(Cadastro.java:128)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.netbeans.modules.web.monitor.server.MonitorFilter.doFilter(MonitorFilter.java:393)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:405)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:964)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:515)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:304)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+06-13 14:11:30 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "DATE" constant "2011"; SQL statement:
+SELECT * FROM PROFESSOR WHERE DATAADM LIKE '2011' [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.expression.Comparison.getValue(Comparison.java:234)
+	at org.h2.expression.Expression.getBooleanValue(Expression.java:180)
+	at org.h2.command.dml.Select.queryFlat(Select.java:515)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:618)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:173)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: 2011
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:270)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 19 more

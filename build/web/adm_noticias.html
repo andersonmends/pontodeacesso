@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+              <title>Ponto de Acesso - Página Inicial</title>
+            <link rel="stylesheet" type="text/css" href="style_adm_noticias.css" />
+            <link rel="icon" href="favicon.gif" type="image/gif">
+                </head>
+
+                <body>
+                    <div id="tudo">
+                        <div id="topo"><a href="home.html"><img src="logo.jpg" /></a></div>
+                        <div id="conteudo-geral">
+                            <div id="painel_dados">
+                                <div id="dados">
+                                    <div id="foto"></div>
+                                    <p>Lucas Emanuel
+                                        <br />
+                                        murhail@hotmail.com
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div id="painel_conteudo">
+                                <div id="menu">
+                                    <ul>
+                                      	<li><a href="adm_cadastros.html">Cadastrar</a></li>
+                                        <li><a href="home.html">Notícias</a></li>
+                                        <li><a href="adm_mensagens.html">Mensagens</a></li>
+                                        <li><a href="adm_calendario.html">Calendário</a></li>
+                                        <li><a href="adm_consultas.html">Consultas</a></li>
+                                        <li><a href="home.html">Sair</a></li>
+                                    </ul>
+                                </div>
+                                <div id="conteudo">
+
+                               <div id="box_noticias">
+                               <h3>Notícias</h3>
+                               <ul>
+                <li><a href="adm_noticias.html">Nova</a></li>
+                <li><a href= "#">Postagens</a></li>
+                <li><a href="#">Rascunhos</a></li>
+        </ul>
+        </div>
+        <div id="noticias">
+        <h2>Enviar notícia</h2>
+        <form action="CadastroNoticiasServlet" method="post">
+        <label>Assunto</label>
+        <input name="assunto" id="assunto" type="text" class="texto" /><br />
+                <label>Escrever notícia</label><br />
+        <textarea name="noticia" id="noticia" cols="" rows="" class="textoarea"></textarea>  
+        <br />
+        <input name="enviar" type="submit" value="Enviar" id="enviar" class="button" />
+        </form>
+</div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div id="rodape"></div>
+
+
+                    </div>
+
+                </body>
+                </html>

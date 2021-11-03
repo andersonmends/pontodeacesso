@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html>
+
+
+<html>
+	<head>
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title> Exemplo </title>
+		<link rel="stylesheet" type="text/css" href="CalendarioStyle.css"/>
+
+        <script>
+        try {
+        xmlhttp = new XMLHttpRequest();
+        } catch(ee) {
+        try{
+        xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');
+        } catch(e) {
+        try{
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+        } catch(E) {
+        xmlhttp = false;
+        }
+        }
+        }
+        function carrega(_idContainer, _endereco){
+        xmlhttp.open('GET',_endereco,true);
+        xmlhttp.onreadystatechange=function() {
+
+        if (xmlhttp.readyState==4){
+        retorno=xmlhttp.responseText;
+        var tag_container = document.getElementById(_idContainer);
+        tag_container.innerHTML=retorno;
+
+        }
+        }
+        xmlhttp.send(null)
+        }
+        </script>
+	
+	</head>
+
+	<body>
+		
+		<img src="fundo_padrao.jpg" id="bg"/>
+		<div id="content"> 
+		
+			<div id="principal">
+
+                
+			
+                <div id="calendario">
+                    <a href="#" id="link" onClick="javascript:carrega('calendario', 'Calendario2.html')">>></a>
+                    <table id="table1" >
+
+                        <tr>
+                            <td colspan="7" id="mes">Janeiro</td>
+                        </tr>
+
+                        <tr id="dias">
+                            <td>Dom</td>
+                            <td>Seg</td>
+                            <td>Ter</td>
+                            <td>Qua</td>
+                            <td>Qui</td>
+                            <td>Sex</td>
+                            <td>Sab</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">1</td>
+                            <td id="td1">2</td>
+                            <td id="td1">3</td>
+                            <td id="td1">4</td>
+                            <td id="td1">5</td>
+                            <td id="td1">6</td>
+                            <td id="td1">7</td>                                                         
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">8</td>
+                            <td id="td1">9</td>
+                            <td id="td1">10</td>
+                            <td id="td1">11</td>
+                            <td id="td1">12</td>
+                            <td id="td1">13</td>
+                            <td id="td1">14</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">15</td>
+                            <td id="td1">16</td>
+                            <td id="td1">17</td>
+                            <td id="td1">18</td>
+                            <td id="td1">19</td>
+                            <td id="td1">20</td>
+                            <td id="td1">21</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">22</td>
+                            <td id="td1">23</td>
+                            <td id="td1">24</td>
+                            <td id="td1">25</td>
+                            <td id="td1">26</td>
+                            <td id="td1">27</td>
+                            <td id="td1">28</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">29</td>
+                            <td id="td1">30</td>
+                            <td id="td1">31</td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                        </tr>
+
+                    </table>
+
+                    <table id="table2">
+
+                        <tr>
+                            <td colspan="7" id="mes">Fevereiro</td>
+                        </tr>
+
+                        <tr id="dias">
+                            <td>Dom</td>
+                            <td>Seg</td>
+                            <td>Ter</td>
+                            <td>Qua</td>
+                            <td>Qui</td>
+                            <td>Sex</td>
+                            <td>Sab</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1">1</td>
+                            <td id="td1">2</td>
+                            <td id="td1">3</td>
+                            <td id="td1">4</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">5</td>
+                            <td id="td1">6</td>
+                            <td id="td1">7</td>
+                            <td id="td1">8</td>
+                            <td id="td1">9</td>
+                            <td id="td1">10</td>
+                            <td id="td1">11</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">12</td>
+                            <td id="td1">13</td>
+                            <td id="td1">14</td>
+                            <td id="td1">15</td>
+                            <td id="td1">16</td>
+                            <td id="td1">17</td>
+                            <td id="td1">18</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">19</td>
+                            <td id="td1">20</td>
+                            <td id="td1">21</td>
+                            <td id="td1">22</td>
+                            <td id="td1">23</td>
+                            <td id="td1">24</td>
+                            <td id="td1">25</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">26</td>
+                            <td id="td1">27</td>
+                            <td id="td1">28</td>
+                            <td id="td1">29</td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                        </tr>
+
+                    </table>
+
+                    <table id="table3">
+
+                        <tr>
+                            <td colspan="7" id="mes">Março</td>
+                        </tr>
+
+                        <tr id="dias">
+                            <td>Dom</td>
+                            <td>Seg</td>
+                            <td>Ter</td>
+                            <td>Qua</td>
+                            <td>Qui</td>
+                            <td>Sex</td>
+                            <td>Sab</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1">1</td>
+                            <td id="td1">2</td>
+                            <td id="td1">3</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">4</td>
+                            <td id="td1">5</td>
+                            <td id="td1">6</td>
+                            <td id="td1">7</td>
+                            <td id="td1">8</td>
+                            <td id="td1">9</td>
+                            <td id="td1">10</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">11</td>
+                            <td id="td1">12</td>
+                            <td id="td1">13</td>
+                            <td id="td1">14</td>
+                            <td id="td1">15</td>
+                            <td id="td1">16</td>
+                            <td id="td1">17</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">18</td>
+                            <td id="td1">19</td>
+                            <td id="td1">20</td>
+                            <td id="td1">21</td>
+                            <td id="td1">22</td>
+                            <td id="td1">23</td>
+                            <td id="td1">24</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">25</td>
+                            <td id="td1">26</td>
+                            <td id="td1">27</td>
+                            <td id="td1">28</td>
+                            <td id="td1">29</td>
+                            <td id="td1">30</td>
+                            <td id="td1">31</td>
+                        </tr>
+
+                    </table>
+
+                    <table id="table4">
+
+                        <tr>
+                            <td colspan="7" id="mes">Abril</td>
+                        </tr>
+
+                        <tr id="dias">
+                            <td>Dom</td>
+                            <td>Seg</td>
+                            <td>Ter</td>
+                            <td>Qua</td>
+                            <td>Qui</td>
+                            <td>Sex</td>
+                            <td>Sab</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">1</td>
+                            <td id="td1">2</td>
+                            <td id="td1">3</td>
+                            <td id="td1">4</td>
+                            <td id="td1">5</td>
+                            <td id="td1">6</td>
+                            <td id="td1">7</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">8</td>
+                            <td id="td1">9</td>
+                            <td id="td1">10</td>
+                            <td id="td1">11</td>
+                            <td id="td1">12</td>
+                            <td id="td1">13</td>
+                            <td id="td1">14</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">15</td>
+                            <td id="td1">16</td>
+                            <td id="td1">17</td>
+                            <td id="td1">18</td>
+                            <td id="td1">19</td>
+                            <td id="td1">20</td>
+                            <td id="td1">21</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">22</td>
+                            <td id="td1">23</td>
+                            <td id="td1">24</td>
+                            <td id="td1">25</td>
+                            <td id="td1">26</td>
+                            <td id="td1">27</td>
+                            <td id="td1">28</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">29</td>
+                            <td id="td1">30</td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                        </tr>
+
+                    </table>
+
+                     <table id="table5">
+
+                        <tr>
+                            <td colspan="7" id="mes">Maio</td>
+                        </tr>
+
+                        <tr id="dias">
+                            <td>Dom</td>
+                            <td>Seg</td>
+                            <td>Ter</td>
+                            <td>Qua</td>
+                            <td>Qui</td>
+                            <td>Sex</td>
+                            <td>Sab</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado"></td>
+                            <td id="td1"></td>
+                            <td id="td1">1</td>
+                            <td id="td1">2</td>
+                            <td id="td1">3</td>
+                            <td id="td1">4</td>
+                            <td id="td1">5</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">6</td>
+                            <td id="td1">7</td>
+                            <td id="td1">8</td>
+                            <td id="td1">9</td>
+                            <td id="td1">10</td>
+                            <td id="td1">11</td>
+                            <td id="td1">12</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">13</td>
+                            <td id="td1">14</td>
+                            <td id="td1">15</td>
+                            <td id="td1">16</td>
+                            <td id="td1">17</td>
+                            <td id="td1">18</td>
+                            <td id="td1">19</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">20</td>
+                            <td id="td1">21</td>
+                            <td id="td1">22</td>
+                            <td id="td1">23</td>
+                            <td id="td1">24</td>
+                            <td id="td1">25</td>
+                            <td id="td1">26</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">27</td>
+                            <td id="td1">28</td>
+                            <td id="td1">29</td>
+                            <td id="td1">30</td>
+                            <td id="td1">31</td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                        </tr>
+
+                    </table>
+
+                     <table id="table6">
+
+                        <tr>
+                            <td colspan="7" id="mes">Junho</td>
+                        </tr>
+
+                        <tr id="dias">
+                            <td>Dom</td>
+                            <td>Seg</td>
+                            <td>Ter</td>
+                            <td>Qua</td>
+                            <td>Qui</td>
+                            <td>Sex</td>
+                            <td>Sab</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1"></td>
+                            <td id="td1">1</td>
+                            <td id="td1">2</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">3</td>
+                            <td id="td1">4</td>
+                            <td id="td1">5</td>
+                            <td id="td1">6</td>
+                            <td id="td1">7</td>
+                            <td id="td1">8</td>
+                            <td id="td1">9</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">10</td>
+                            <td id="td1">11</td>
+                            <td id="td1">12</td>
+                            <td id="td1">13</td>
+                            <td id="td1">14</td>
+                            <td id="td1">15</td>
+                            <td id="td1">16</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">17</td>
+                            <td id="td1">18</td>
+                            <td id="td1">19</td>
+                            <td id="td1">20</td>
+                            <td id="td1">21</td>
+                            <td id="td1">22</td>
+                            <td id="td1">23</td>
+                        </tr>
+
+                        <tr>
+                            <td id="td1feriado">24</td>
+                            <td id="td1">25</td>
+                            <td id="td1">26</td>
+                            <td id="td1">27</td>
+                            <td id="td1">28</td>
+                            <td id="td1">29</td>
+                            <td id="td1">30</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+						
+			</div>
+		
+		</div>
+	</body>
+</html>

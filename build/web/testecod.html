@@ -1,0 +1,81 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>
+            <form id="formHorarios" action="Testecod" method="GET">
+                <fieldset id="topo" name="topo">
+                    <label>Hora</label><br />
+                    <select name="hora1" id="hora1" class="cbox">
+                        <option value="07:30" >07:30 - 08:20</option>
+                        <option value="08:20" >08:20 - 09:10</option>
+
+                    </select>
+                    <br />
+
+                    <label>Dia</label><br />
+                    <select name="dia1" id="dia1" class="cbox">
+                        <option value="Segunda" >Segunda</option>
+                        <option value="Terca" >Terça</option>
+
+
+                    </select>
+                    <br />
+                    <label>Disciplina</label><br />
+                    <select name="disciplina1" id="disciplina1" class="cbox">
+                        <option value="Matematica" >Matemática</option>
+                        <option value="Portugues" >Português</option>
+
+                    </select>
+                    <br />
+
+                </fieldset>
+                <fieldset id="busca" name="busca">
+                    <label> Pesquisar por turno:</label>
+                    <select name="turno" class="cbox" id="turno">
+                        <option value="Manha" selected>Manhã</option>
+                        <option value="Tarde">Tarde</option>
+                        <option value="Noite">Noite</option>
+                    </select>
+
+
+                    <label>Série</label>
+                    <select name="serie" class="cbox" id="serie">
+                        <option value="1" selected>1°</option>
+                        <option value="2">2°</option>
+                        <option value="3">3°</option>
+                    </select>
+
+                    <label>Classe</label>
+                    <select name="classe" class="cbox" id="classe">
+                        <option value="A" selected>A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+
+                    <label>Ano Letivo:</label>
+                    <select name="ano" class="cbox" id="ano">
+                        <option value="2008" selected>2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                    </select>
+
+
+                </fieldset>
+
+                <input id="btSalvarAluno" class="button" type="submit" value="Testar"/>
+            </form>
+
+
+        </div>
+    </body>
+</html>

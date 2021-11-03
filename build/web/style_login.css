@@ -1,0 +1,210 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+}
+
+body{
+    background:#fffff;
+    font: 12px Verdana, Arial, Tahoma;
+
+}
+
+html, body{
+    height:100%;
+
+
+}
+
+#geral{
+
+    width:100%;
+    background:#FFF;
+    margin: 0 auto;
+    min-height:100%;
+    position:relative;
+    text-align:left
+
+}
+
+#topo{
+
+    width:100%;
+    height:120px;
+    background:url(top.jpg);
+    background-repeat:repeat-x;
+    margin: 0 auto;
+    text-align:center;
+    padding-top:30px;
+    padding-bottom:20px;
+}
+
+
+#conteudo-cima{
+    width:100%;
+    height:50%;
+    background:#FFF;
+    min-height:50%;
+
+
+
+}
+
+#conteudo-baixo{
+    width:100%;
+    height:50%;
+    min-height:50%;
+    background:#FFF;
+    text-align: center;
+
+
+}
+
+#rodape{
+
+    width:100%;
+    height:108px;
+    background: url(bottom.jpg);
+    background-repeat:repeat-x;
+    position:absolute;
+    bottom:0;
+    font:9px Verdana, Geneva, sans-serif;
+    text-align:center;
+    vertical-align: bottom;
+    display: table-cell;
+
+}
+
+.clear{
+    clear:both;
+
+
+}
+
+#conteudo_geral{
+    padding-bottom:100%;
+}
+
+
+
+.button {
+
+    border-radius:6px;
+    border: 1px solid #08737b;
+    padding:3px 20px;
+    margin-left: 40px;
+    height:30px;
+    line-height:20px;
+    background: -webkit-linear-gradient(top, #86f3fb, #1c9ea8);
+    background: -moz-linear-gradient(top, #86f3fb, #1c9ea8);
+    background: -ms-linear-gradient(top, #86f3fb, #1c9ea8);
+    background: -o-linear-gradient(top, #86f3fb, #1c9ea8);
+    box-shadow: inset 0px 15px 0px rgba(255,255,255,0.35), 0px 0px 2px #000, inset 0px 0px 6px rgba(0,0,0,0.55);
+    cursor:pointer;
+    color: black;
+    font: Arial 14px;
+
+}
+.button:hover {
+    border-radius:6px;
+    border: 1px solid #08737b;
+    padding:3px 20px;
+    float:center;
+    height:30px;
+    line-height:20px;
+    background: -webkit-linear-gradient(top, #63c1c8, #137b83);
+    background: -moz-linear-gradient(top, #63c1c8, #137b83);
+    background: -ms-linear-gradient(top, #63c1c8, #137b83);
+    background: -o-linear-gradient(top, #63c1c8, #137b83);
+    box-shadow: inset 0px 15px 0px rgba(255,255,255,0.35), 0px 0px 2px #000, inset 0px 0px 6px rgba(0,0,0,0.55);
+
+}
+.button:active {
+    border-radius:6px;
+    border: 1px solid #08737b;
+    padding:3px 20px;
+    height:30px;
+    line-height:20px;
+    background: -webkit-linear-gradient(top, #86f3fb, #1c9ea8);
+    background: -moz-linear-gradient(top, #1c9ea8,#86f3fb);
+    background: -ms-linear-gradient(top, #1c9ea8,#86f3fb);
+    background: -o-linear-gradient(top, #1c9ea8,#86f3fb);
+    box-shadow: inset 0px 15px 0px rgba(255,255,255,0.25), 0px 0px 2px #000, inset 0px 0px 6px rgba(255,255,255,0.25);
+    cursor:pointer;
+}
+
+
+
+#formLogin{
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:12px;
+    margin:0 auto;
+    text-align:left;
+
+}
+
+#divLogin{
+
+    width:180px;
+    height: 180px;
+    padding: 35px;
+    margin:0 auto;
+    background:url(centro_login.jpg);
+
+}
+
+label{
+    display: block;
+    float: left;
+    width:150px;
+}
+
+label {
+    text-align: right;
+    width: 35px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    line-height:20px;
+
+}
+
+
+br{
+    clear:left;
+}
+
+.texto{
+    width: 100px;
+    border: solid #08737b 1px; 
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 1px #777;
+    font: "Lucida Grande", sans-serif;
+    -webkit-transition: 0.1s linear;
+    -moz-transition: 0.1s linear;
+    -o-transition: 0.1s linear;
+    -ms-transition: 0.1s linear;
+    transition: 0.1s linear;
+
+
+
+}
+.texto:focus{
+    background-color: #fff;
+    border: solid #86f3fb 1px;
+    -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5), 0px 0px 3px #000;
+
+}
+
+
+
